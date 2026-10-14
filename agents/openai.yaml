@@ -1,0 +1,3 @@
+interface:
+  display_name: "Rings"
+  short_description: "Draw a Git repo as tree rings, coloured by disclosed AI co-authors"

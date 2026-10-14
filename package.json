@@ -1,0 +1,43 @@
+{
+  "name": "repo-rings",
+  "version": "0.1.0",
+  "description": "Tree rings for Git repos: one ring per month, coloured where the history discloses AI co-authors, AI agent accounts or bot accounts.",
+  "type": "module",
+  "bin": {
+    "rings": "bin/rings.mjs",
+    "repo-rings": "bin/rings.mjs"
+  },
+  "files": [
+    "bin/",
+    "lib/",
+    "SKILL.md",
+    "agents/",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test 'test/*.test.mjs'",
+    "gallery": "node scripts/gallery.mjs gallery/repos.txt",
+    "hero": "node scripts/hero.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "git",
+    "visualization",
+    "agent-skill",
+    "claude-code",
+    "codex",
+    "ai",
+    "history",
+    "tree-rings"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vnmoorthy/rings.git"
+  },
+  "homepage": "https://vnmoorthy.github.io/rings/",
+  "license": "MIT",
+  "author": "vnmoorthy"
+}
