@@ -5,7 +5,7 @@ import { classifyCommit, isBotAccount, isAgentAccount, agentOf } from '../lib/cl
 const c = (name, email, trailers = []) => ({ hash: 'abc1234567', t: 0, name, email, trailers: trailers.map(([key, value]) => ({ key: key.toLowerCase(), value })) })
 
 test('Claude Code trailer is a disclosed AI co-author', () => {
-  assert.deepEqual(classifyCommit(c('Ana', 'ana@x.dev', [['Co-Authored-By', 'Claude <noreply@anthropic.com>']])), { cls: 'trailer', agent: 'claude' })
+  assert.deepEqual(classifyCommit(c('Ana', 'ana@x.dev', [['Co-Authored-By', 'Claude <noreply@anthropic.com>']])), { cls: 'trailer', agent: 'claude', via: 'co-author' })
   assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude Opus 4.6 <noreply@anthropic.com>']])).agent, 'claude')
 })
 
@@ -38,7 +38,7 @@ test('agent accounts as authors', () => {
 })
 
 test("aider's author suffix is a disclosure", () => {
-  assert.deepEqual(classifyCommit(c('Paul Gauthier (aider)', 'paul@aider.chat')), { cls: 'trailer', agent: 'aider' })
+  assert.deepEqual(classifyCommit(c('Paul Gauthier (aider)', 'paul@aider.chat')), { cls: 'trailer', agent: 'aider', via: 'author' })
 })
 
 test('bot-named accounts', () => {
@@ -83,4 +83,11 @@ test('robo-named humans are not bots; robo service accounts are', () => {
 
 test("opencode's agent account is an AI agent account", () => {
   assert.equal(classifyCommit(c('opencode-agent[bot]', '219766164+opencode-agent[bot]@users.noreply.github.com')).cls, 'agent')
+})
+
+test('Assisted-by trailers (Node.js policy) count, and remember how they were disclosed', () => {
+  assert.deepEqual(classifyCommit(c('Ana', 'ana@x.dev', [['Assisted-by', 'Codex']])), { cls: 'trailer', agent: 'codex', via: 'assisted' })
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Assisted-by', 'Opencode:Opus 4.6']])).agent, 'opencode')
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Assisted-by', 'Claude Code']])).agent, 'claude')
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude <noreply@anthropic.com>']])).via, 'co-author')
 })

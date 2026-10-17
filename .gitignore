@@ -2,3 +2,5 @@ node_modules/
 site/
 *-rings.html
 .DS_Store
+.png-originals/
+gallery-build.log

@@ -30,7 +30,7 @@ Rings cuts a repository open like a log. The pith is the first commit, the bark 
 
 | | Signal | Example |
 |---|---|---|
-| 🟧 | **AI co-author trailer** | `Co-authored-by: Claude <noreply@anthropic.com>`, Codex, Copilot, Cursor, Gemini, Aider, opencode, Amp ... |
+| 🟧 | **AI co-author / assisted-by trailer** | `Co-authored-by: Claude <noreply@anthropic.com>`, `Assisted-by: Codex` (Node.js asks for these), Copilot, Cursor, Gemini, Aider, opencode, Amp ... |
 | 🟪 | **AI agent account** | the author is `copilot-swe-agent[bot]`, `devin-ai-integration[bot]`, `google-labs-jules[bot]`, `claude[bot]` ... |
 | 🟩 | **Bot-named account** | `dependabot[bot]`, `github-actions[bot]`, `*bot`, `robo*` ... |
 | 🟢 | **During an agent session** (your own repo, opt-in) | made while a local Claude Code or Codex session was running in that repo |
@@ -40,11 +40,12 @@ Hover a ring for its counts, agents, accounts and a sample commit hash. Export a
 
 ## From the gallery
 
-Numbers from each project's public history (non-merge commits on the default branch), read on 14 Oct 2026:
+Numbers from each project's public history (non-merge commits on the default branch), read on 17 Oct 2026:
 
-- **oven-sh/bun**: Claude co-author trailers rose to 61% of commits in Feb 2026. From Apr 2026 they are near zero, and one account, `robobun`, authored up to 87% of a month's commits while monthly volume rose from 175 to 1,042.
-- **denoland/deno**: trailers peaked at 61% in Mar 2026.
-- **astral-sh/uv**: 25% at the Jan 2026 peak. **openai/codex**: Codex co-author trailers in up to 20% of a week's commits.
+- **microsoft/vscode**: commits with an AI co-author trailer (almost all GitHub Copilot) went from 5% in Jan 2026 to 66% in Sep 2026, rising almost every month.
+- **oven-sh/bun**: Claude co-author trailers peaked at 61% of commits in Feb 2026. From Apr 2026 they are near zero, and one account, `robobun`, authored up to 87% of a month's commits while monthly volume rose from 175 to 1,042.
+- **nodejs/node**: `Assisted-by` trailers (the form Node.js asks contributors to use) naming an AI tool (mostly Codex and opencode) were on 29% of September's commits.
+- **Aider-AI/aider**: aider's own repo, where aider-marked authors peaked at 62% of commits in Mar 2025.
 
 Disclosure is not usage. Trailers change with tool defaults, squash merges and agents that commit under their own accounts. Rings shows what the history says and nothing more. **[See all repos →](https://vnmoorthy.github.io/rings/)**
 
@@ -78,7 +79,7 @@ npx github:vnmoorthy/rings [repo] [options]
 ## How it reads history
 
 - `git log --no-merges` on the default branch, author dates in UTC. Only commit metadata is read; remote repos are cloned with `--filter=tree:0` into `~/.cache/rings`.
-- **Trailers** are matched on an agent's own display name or no-reply address. Company domains are never enough (Bun's engineers commit from anthropic.com, OpenAI's from openai.com), and a human co-author called Claude, Devin or Jules is never counted. The rules and their tests are in [`lib/classify.mjs`](lib/classify.mjs) and [`test/`](test/).
+- **Trailers** (`Co-authored-by`, `Assisted-by`, `Generated-by`, `Made-with`) are matched on an agent's own display name or no-reply address. Company domains are never enough (Bun's engineers commit from anthropic.com, OpenAI's from openai.com), and a human co-author called Claude, Devin or Jules is never counted. The rules and their tests are in [`lib/classify.mjs`](lib/classify.mjs) and [`test/`](test/).
 - **Ring size** adapts to age: monthly for repos older than two years, weekly from three months, daily from a week, one ring per commit below that. Width is the square root of the commit count, capped at 2.5× the median so one burst cannot flatten the rest; empty months leave a thin dark line.
 - **`--sessions`** reads only the first and last few KB of each transcript in `~/.claude/projects` and `~/.codex/sessions` (working directory and timestamps). It never leaves your machine, and transcripts your tools have already cleaned up simply aren't there.
 

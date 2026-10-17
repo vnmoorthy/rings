@@ -90,3 +90,13 @@ test('end to end on a temporary git repo', () => {
   assert.ok(fs.existsSync(path.join(dir, 'out.html')))
   fs.rmSync(dir, { recursive: true, force: true })
 })
+
+test('author names from history cannot inject HTML into the page', () => {
+  const evil = '<img src=x onerror=alert(1)>[bot]'
+  const commits = [mk(T0, evil, 'x@y.z'), mk(T0 + 40 * DAY), mk(T0 + 900 * DAY, evil, 'x@y.z')]
+  const m = buildRings(commits)
+  const html = renderHTML(m, facts(m), { label: '<script>alert(1)</script>/repo' })
+  assert.ok(!html.includes('<img src=x onerror'), 'raw author name must not appear')
+  assert.ok(!html.includes('<script>alert(1)</script>'), 'raw label must not appear')
+  assert.match(html, /const h = \(x\) =>/, 'tooltip escapes values')
+})

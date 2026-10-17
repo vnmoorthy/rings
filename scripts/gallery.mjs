@@ -7,6 +7,16 @@ import { resolveRepo, readCommits } from '../lib/git.mjs'
 import { buildRings, facts } from '../lib/rings.mjs'
 import { renderHTML, COLORS } from '../lib/render.mjs'
 import { shot } from './shot.mjs'
+import { spawnSync } from 'node:child_process'
+
+// PNG -> JPEG with ffmpeg when available (keeps the site small); otherwise keep the PNG.
+function toJpeg(png, width) {
+  const jpg = png.replace(/\.png$/, '.jpg')
+  const vf = width ? ['-vf', `scale=${width}:-1:flags=lanczos`] : []
+  const r = spawnSync('ffmpeg', ['-y', '-loglevel', 'error', '-i', png, ...vf, '-q:v', '3', jpg])
+  if (r.status === 0 && fs.existsSync(jpg)) fs.rmSync(png)
+  else fs.copyFileSync(png, jpg)
+}
 
 const args = process.argv.slice(2)
 const flag = (n, d) => { const i = args.indexOf(n); return i >= 0 ? args[i + 1] : d }
@@ -31,12 +41,14 @@ for (const e of entries) {
     const commits = readCommits(repo.dir)
     const model = buildRings(commits, { bots: e.bots, humans: e.humans })
     const f = facts(model)
-    const html = renderHTML(model, f, { label: repo.label, remoteUrl: repo.remoteUrl, backLink: '../', ogImage: `${base}/r/${slug}-card.png`, pageUrl: `${base}/r/${slug}.html` })
+    const html = renderHTML(model, f, { label: repo.label, remoteUrl: repo.remoteUrl, backLink: '../', ogImage: `${base}/r/${slug}-card.jpg`, pageUrl: `${base}/r/${slug}.html` })
     const file = path.join(site, 'r', `${slug}.html`)
     fs.writeFileSync(file, html)
     if (!skipShots) {
-      shot(file, path.join(site, 'r', `${slug}.png`), { view: 'square' })
-      shot(file, path.join(site, 'r', `${slug}-card.png`), { view: 'card' })
+      const sq = path.join(site, 'r', `${slug}.png`), cd = path.join(site, 'r', `${slug}-card.png`)
+      shot(file, sq, { view: 'square' })
+      shot(file, cd, { view: 'card' })
+      toJpeg(sq, 720); toJpeg(cd, null)
     }
     const r = { repo: repo.label, slug, commits: model.total, unit: model.unit, rings: model.rings.length, first: new Date(model.firstT * 1000).toISOString().slice(0, 10), shares: f.shares, lines: f.lines, agents: model.agentTotals, topBots: Object.entries(model.botTotals).sort((a, b) => b[1] - a[1]).slice(0, 3), ms: Date.now() - t0 }
     results.push(r)
@@ -61,14 +73,14 @@ fs.writeFileSync(path.join(site, '.nojekyll'), '')
 console.log(`\n${all.length} repos in ${site}/index.html`)
 
 function indexHTML(rows) {
-  const cards = rows.map((r) => `<a class="card" href="r/${r.slug}.html"><img src="r/${r.slug}.png" alt="Tree rings of ${esc(r.repo)}" loading="lazy" width="540" height="540"><div class="meta"><b>${esc(r.repo)}</b><span>${esc(r.lines[0])}</span></div></a>`).join('\n')
+  const cards = rows.map((r) => `<a class="card" href="r/${r.slug}.html"><img src="r/${r.slug}.jpg" alt="Tree rings of ${esc(r.repo)}" loading="lazy" width="720" height="720"><div class="meta"><b>${esc(r.repo)}</b><span>${esc(r.lines[0])}</span></div></a>`).join('\n')
   const sw = (c, t) => `<span class="lg"><i style="background:${c}"></i>${t}</span>`
   return `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rings · tree rings for Git repos</title>
 <meta name="description" content="Famous repositories cut open like tree trunks: one ring per month, coloured where the history discloses AI co-authors, AI agent accounts or bot-named accounts.">
 <meta property="og:title" content="Rings · tree rings for Git repos"><meta property="og:description" content="See when AI moved into famous codebases, measured from their own commit history.">
-<meta property="og:image" content="${base}/r/${rows[0] ? rows[0].slug : 'oven-sh--bun'}-card.png"><meta name="twitter:card" content="summary_large_image">
+<meta property="og:image" content="${base}/r/${rows[0] ? rows[0].slug : 'oven-sh--bun'}-card.jpg"><meta name="twitter:card" content="summary_large_image">
 <style>
   :root { color-scheme: dark; --bg:#090706; --ink:#f3e6d3; --muted:#a8998a; }
   * { box-sizing:border-box } html,body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 ui-sans-serif,system-ui,-apple-system,sans-serif }
@@ -96,7 +108,7 @@ function indexHTML(rows) {
   <p class="lede">Famous codebases cut open like tree trunks. One ring per month since the first commit, ring width from that month's commits, and colour where the history itself discloses an AI co-author, an AI agent's own account, or a bot-named account.</p>
   <pre>npx skills add vnmoorthy/rings -g     # then ask your agent: /rings</pre>
   <pre>npx github:vnmoorthy/rings .          # or any owner/name</pre>
-  <div class="legend">${sw(COLORS.trailer, 'AI co-author trailer')}${sw(COLORS.agent, 'AI agent account')}${sw(COLORS.bot, 'bot-named account')}${sw('#dcb07a', 'no AI signal (not "human-written")')}</div>
+  <div class="legend">${sw(COLORS.trailer, 'AI co-author / assisted-by trailer')}${sw(COLORS.agent, 'AI agent account')}${sw(COLORS.bot, 'bot-named account')}${sw('#dcb07a', 'no AI signal (not "human-written")')}</div>
 </header>
 <section class="grid">
 ${cards}
@@ -105,7 +117,7 @@ ${cards}
   <h2>How to read it</h2>
   <ul>
     <li><b>Disclosure is not usage.</b> Rings only sees what commits say. Many people use AI without a trailer, and a trailer can be added or removed by settings. A ring with no colour means no signal, never "written by a human".</li>
-    <li><b>AI co-author trailer:</b> a <code>Co-authored-by</code> (or similar) trailer naming a coding agent, matched on the agent's own display name or no-reply address (for example <code>Claude &lt;noreply@anthropic.com&gt;</code>). Company email domains and human co-authors with the same first name are not counted.</li>
+    <li><b>AI co-author / assisted-by trailer:</b> a <code>Co-authored-by</code>, <code>Assisted-by</code> (the form Node.js asks contributors to use) or similar trailer naming a coding agent, matched on the agent's own display name or no-reply address (for example <code>Claude &lt;noreply@anthropic.com&gt;</code>). Company email domains and human co-authors with the same first name are not counted.</li>
     <li><b>AI agent account:</b> the commit author is an agent's own account, such as <code>copilot-swe-agent[bot]</code>, <code>devin-ai-integration[bot]</code> or <code>google-labs-jules[bot]</code>.</li>
     <li><b>Bot-named account:</b> an author whose name marks it as automation (<code>[bot]</code>, <code>*bot</code>, <code>robo*</code>, <code>github-actions</code> ...). Rings does not know what runs behind such an account.</li>
     <li>Non-merge commits reachable from the default branch, grouped by author date in UTC. Ring width is the square root of the month's commits, capped at 2.5 times the median so one burst cannot flatten the rest.</li>
