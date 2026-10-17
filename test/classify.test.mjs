@@ -91,3 +91,50 @@ test('Assisted-by trailers (Node.js policy) count, and remember how they were di
   assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Assisted-by', 'Claude Code']])).agent, 'claude')
   assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude <noreply@anthropic.com>']])).via, 'co-author')
 })
+
+test('people whose handle ends in "bot" are not bots; service accounts are', () => {
+  assert.ok(!isBotAccount('lyonbot', 'lyonbot@outlook.com'))
+  assert.ok(!isBotAccount('ninjarobot', 'curylod@asme.org'))
+  assert.ok(isBotAccount('denobot', '33910674+denobot@users.noreply.github.com'))
+  assert.ok(isBotAccount('zaniebot', 'zaniebot@accounts.zanie.blue'))
+  assert.ok(isBotAccount('nathanwhitbot', 'nathan+bot@deno.com'))
+  assert.ok(isBotAccount('oxc-bot', 'boshen_chen@qq.com'))
+})
+
+import { toolsIn } from '../lib/classify.mjs'
+
+test('Assisted-by values in tool:model and list forms (Node.js, llama.cpp)', () => {
+  assert.deepEqual(toolsIn('claude:opus-5.5'), ['claude'])
+  assert.deepEqual(toolsIn('openai:gpt-5.5'), ['openai'])
+  assert.deepEqual(toolsIn('Claude, Codex'), ['claude', 'codex'])
+  assert.deepEqual(toolsIn('pi:llama.cpp/Qwen3.8-27B'), ['pi', 'qwen'])
+  assert.deepEqual(toolsIn('a closed-source coding agent'), ['ai'])
+  assert.deepEqual(toolsIn('AI'), ['ai'])
+  // people named in Assisted-by are not tools
+  assert.deepEqual(toolsIn('Angel'), [])
+  assert.deepEqual(toolsIn('brian khuu'), [])
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Assisted-by', 'Angel']])).cls, 'none')
+})
+
+test('a bare first name counts as the tool only off personal mailboxes', () => {
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude <claude-bot@bun.sh>']])).cls, 'trailer')
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude <claude.dupont@gmail.com>']])).cls, 'none')
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude Code (kimi-k3[1m]) <noreply@anthropic.com>']])).agent, 'claude')
+  assert.equal(classifyCommit(c('Ana', 'ana@x.dev', [['Co-authored-by', 'Claude Bot <claude-bot@bun.sh>']])).agent, 'claude')
+})
+
+test('automation names: GitHub Actions, "(Bot)" and " Bot" suffixes', () => {
+  assert.ok(isBotAccount('GitHub Actions', 'actions@github.com'))
+  assert.ok(isBotAccount('GitHub Action', 'action@github.com'))
+  assert.ok(isBotAccount('Houston (Bot)', '108291165+astrobot-houston@users.noreply.github.com'))
+  assert.ok(isBotAccount('Fred K. Bot', 'fred@astro.build'))
+  assert.ok(isBotAccount('Excalidraw Bot', '77840495+excalibot@users.noreply.github.com'))
+  assert.ok(!isBotAccount('Jan Botsch', 'jan@x.io'))
+})
+
+test("chores pushed by an agent's account are automation, its PRs are agent work", () => {
+  const chore = { ...c('opencode-agent[bot]', 'opencode-agent[bot]@users.noreply.github.com'), subject: 'chore: generate', cname: 'opencode-agent[bot]' }
+  const pr = { ...c('opencode-agent[bot]', 'opencode-agent[bot]@users.noreply.github.com'), subject: 'fix: handle empty config (#123)', cname: 'GitHub' }
+  assert.equal(classifyCommit(chore).cls, 'bot')
+  assert.equal(classifyCommit(pr).cls, 'agent')
+})

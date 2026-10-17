@@ -1,5 +1,6 @@
 # One repo per line: owner/name [bots=a,b] [humans=a,b]
 # Order here is the order on the gallery page.
+microsoft/vscode
 oven-sh/bun
 denoland/deno
 astral-sh/uv
@@ -12,7 +13,7 @@ sst/opencode
 cline/cline
 Aider-AI/aider
 anthropics/claude-code
-vercel/next.js
+vercel/next.js humans=Zoe-Bot,minervabot
 facebook/react
 vitejs/vite
 sveltejs/svelte
@@ -22,7 +23,7 @@ supabase/supabase
 excalidraw/excalidraw
 ollama/ollama
 ggml-org/llama.cpp
-huggingface/transformers
+huggingface/transformers humans=assafbot
 langchain-ai/langchain
 vercel/ai
 shadcn-ui/ui
@@ -36,4 +37,3 @@ tauri-apps/tauri
 pydantic/pydantic
 fastapi/fastapi
 dotnet/runtime
-microsoft/vscode

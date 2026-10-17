@@ -79,7 +79,7 @@ function indexHTML(rows) {
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Rings · tree rings for Git repos</title>
 <meta name="description" content="Famous repositories cut open like tree trunks: one ring per month, coloured where the history discloses AI co-authors, AI agent accounts or bot-named accounts.">
-<meta property="og:title" content="Rings · tree rings for Git repos"><meta property="og:description" content="See when AI moved into famous codebases, measured from their own commit history.">
+<meta property="og:title" content="Rings · tree rings for Git repos"><meta property="og:description" content="Famous codebases cut open like tree trunks, coloured where their commit history discloses AI co-authors, agent accounts or bots. Disclosure is not usage.">
 <meta property="og:image" content="${base}/r/${rows[0] ? rows[0].slug : 'oven-sh--bun'}-card.jpg"><meta name="twitter:card" content="summary_large_image">
 <style>
   :root { color-scheme: dark; --bg:#090706; --ink:#f3e6d3; --muted:#a8998a; }
@@ -105,7 +105,7 @@ function indexHTML(rows) {
 <body>
 <header>
   <h1>Rings</h1>
-  <p class="lede">Famous codebases cut open like tree trunks. One ring per month since the first commit, ring width from that month's commits, and colour where the history itself discloses an AI co-author, an AI agent's own account, or a bot-named account.</p>
+  <p class="lede">Famous codebases cut open like tree trunks. One ring per month since the first commit (one per week for repos under two years old), ring width from that period's commits, and colour where the history itself discloses an AI co-author, an AI agent's own account, or a bot-named account.</p>
   <pre>npx skills add vnmoorthy/rings -g     # then ask your agent: /rings</pre>
   <pre>npx github:vnmoorthy/rings .          # or any owner/name</pre>
   <div class="legend">${sw(COLORS.trailer, 'AI co-author / assisted-by trailer')}${sw(COLORS.agent, 'AI agent account')}${sw(COLORS.bot, 'bot-named account')}${sw('#dcb07a', 'no AI signal (not "human-written")')}</div>
@@ -117,9 +117,9 @@ ${cards}
   <h2>How to read it</h2>
   <ul>
     <li><b>Disclosure is not usage.</b> Rings only sees what commits say. Many people use AI without a trailer, and a trailer can be added or removed by settings. A ring with no colour means no signal, never "written by a human".</li>
-    <li><b>AI co-author / assisted-by trailer:</b> a <code>Co-authored-by</code>, <code>Assisted-by</code> (the form Node.js asks contributors to use) or similar trailer naming a coding agent, matched on the agent's own display name or no-reply address (for example <code>Claude &lt;noreply@anthropic.com&gt;</code>). Company email domains and human co-authors with the same first name are not counted.</li>
+    <li><b>AI co-author / assisted-by trailer:</b> a <code>Co-authored-by</code> line naming a coding agent by its own display name or no-reply address (for example <code>Claude &lt;noreply@anthropic.com&gt;</code>), or an <code>Assisted-by</code>, <code>AI-assisted</code> or <code>Generated with …</code> line naming a tool. Lines that GitHub squash merges push out of the trailer block are read too. Company email domains and people's full names (Claude Paroz, Devin Weaver) are not counted.</li>
     <li><b>AI agent account:</b> the commit author is an agent's own account, such as <code>copilot-swe-agent[bot]</code>, <code>devin-ai-integration[bot]</code> or <code>google-labs-jules[bot]</code>.</li>
-    <li><b>Bot-named account:</b> an author whose name marks it as automation (<code>[bot]</code>, <code>*bot</code>, <code>robo*</code>, <code>github-actions</code> ...). Rings does not know what runs behind such an account.</li>
+    <li><b>Bot-named account:</b> an author whose name or address marks it as automation (<code>[bot]</code>, <code>*-bot</code>, <code>… Bot</code>, <code>github-actions</code>, <code>robobun@oven.sh</code> ...), plus routine chores (generated files, lockfiles, formatting) pushed by an agent's account. Rings does not know what runs behind such an account.</li>
     <li>Non-merge commits reachable from the default branch, grouped by author date in UTC. Ring width is the square root of the month's commits, capped at 2.5 times the median so one burst cannot flatten the rest.</li>
     <li>Maintainers: if you would like your repo removed or a bot list corrected, <a href="https://github.com/vnmoorthy/rings/issues">open an issue</a> and it will be done.</li>
   </ul>

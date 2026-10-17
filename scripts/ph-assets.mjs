@@ -24,16 +24,16 @@ const legend = `<div class="lg"><span><i style="background:${COLORS.trailer}"></
 
 const pages = {
   '1-hero': () => {
-    const r = by['oven-sh/bun']
+    const r = by['microsoft/vscode']
     return `<div style="display:flex;height:760px;align-items:center;padding:0 56px;gap:44px">
       <img src="${img(r.slug)}" style="width:640px;height:640px;border-radius:18px">
       <div style="flex:1"><h1>Tree rings for your codebase</h1>
-      <p class="muted" style="margin:0 0 26px;font-size:22px">One ring per month since the first commit. Colour wherever the history discloses an AI co-author, an agent account or a bot.</p>
+      <p class="muted" style="margin:0 0 26px;font-size:22px">One ring per month since the first commit. Colour wherever the history discloses an AI co-author, an agent account or a bot. Disclosure is not usage.</p>
       ${r.lines.slice(0, 3).map((l, i) => `<p style="margin:0 0 10px;font-size:${i ? 19 : 21}px;${i ? 'color:#d9cab6' : 'font-weight:650'}">${esc(l)}</p>`).join('')}
       <p class="mono k" style="margin-top:28px;font-size:18px">npx skills add vnmoorthy/rings -g</p></div></div>`
   },
   '2-gallery': () => {
-    const picks = ['oven-sh/bun', 'denoland/deno', 'Aider-AI/aider', 'n8n-io/n8n', 'openai/codex', 'vercel/next.js', 'tldraw/tldraw', 'sst/opencode'].filter((x) => by[x]).slice(0, 8)
+    const picks = ['oven-sh/bun', 'nodejs/node', 'denoland/deno', 'Aider-AI/aider', 'n8n-io/n8n', 'microsoft/TypeScript', 'tldraw/tldraw', 'sst/opencode'].filter((x) => by[x]).slice(0, 8)
     return `<div style="padding:24px 120px"><h2 style="margin-bottom:6px">Famous repos, cut open</h2><p class="muted" style="margin:0 0 14px;font-size:18px">Read from each project's public commit history. Hover any ring for its counts.</p>
       <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px 16px">${picks.map((p) => `<div><img src="${img(by[p].slug)}" style="width:100%;border-radius:12px;display:block"><div class="mono" style="font-size:13px;margin-top:4px;color:#e9dccb">${esc(p)}</div></div>`).join('')}</div></div>`
   },

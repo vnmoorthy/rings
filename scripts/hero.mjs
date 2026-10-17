@@ -7,7 +7,7 @@ import path from 'node:path'
 import { spawnSync } from 'node:child_process'
 import { shot } from './shot.mjs'
 
-const [page, outDir = '.github/assets'] = process.argv.slice(2).filter((a) => !a.startsWith('--'))
+const [page, outDir = 'site/assets'] = process.argv.slice(2).filter((a) => !a.startsWith('--'))
 const arg = (n, d) => { const i = process.argv.indexOf(n); return i >= 0 ? Number(process.argv[i + 1]) : d }
 const fps = arg('--fps', 15)
 const width = arg('--width', 720)

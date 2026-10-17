@@ -3,6 +3,7 @@
 import fs from 'node:fs'
 import path from 'node:path'
 import { spawn } from 'node:child_process'
+import { fileURLToPath } from 'node:url'
 import { resolveRepo, readCommits } from '../lib/git.mjs'
 import { buildRings, facts } from '../lib/rings.mjs'
 import { renderHTML } from '../lib/render.mjs'
@@ -66,7 +67,9 @@ export async function main(argv = process.argv.slice(2)) {
   try { o = parseArgs(argv) } catch (e) { console.error(`rings: ${e.message}\n\n${HELP}`); return 2 }
   if (o.help) { console.log(HELP); return 0 }
   const log = (m) => { if (!o.json) console.error(`rings: ${m}`) }
+  const warn = (m) => console.error(`rings: warning: ${m}`)
   const repo = resolveRepo(o.repo, { refresh: o.refresh, log })
+  for (const w of repo.warnings || []) warn(w)
   log(`reading history of ${repo.label}...`)
   const commits = readCommits(repo.dir, { ref: o.ref })
   let inSession = null, sessionNote = null
@@ -82,30 +85,34 @@ export async function main(argv = process.argv.slice(2)) {
   fs.writeFileSync(out, html)
 
   const notable = []
-  const add = (kind, r, extra) => { if (r && !notable.some((x) => x.ring === r.label && x.kind === kind)) notable.push({ kind, ring: r.label, commits: r.n, ...extra, sample: r.sample }) }
-  add('first AI co-author trailer', f.firstTrailer, { agents: f.firstTrailer && Object.keys(f.firstTrailer.agents).map(agentLabel) })
-  add('peak AI co-author trailers', f.peakTrailer, { share: f.peakTrailer && Math.round((100 * f.peakTrailer.counts.trailer) / f.peakTrailer.n) })
-  add('first AI agent account', f.firstAgent, {})
-  add('peak bot-named accounts', f.peakBot, { share: f.peakBot && Math.round((100 * f.peakBot.counts.bot) / f.peakBot.n), accounts: f.peakBot && Object.entries(f.peakBot.botNames).sort((a, b) => b[1] - a[1]).slice(0, 3) })
-  add('busiest ring', f.busiest, {})
+  // one sample commit hash per entry, matching its kind, so an agent can cite it (git show <hash> --stat)
+  const add = (kind, r, cls, extra) => { if (r && !notable.some((x) => x.ring === r.label && x.kind === kind)) notable.push({ kind, ring: r.label, commits: r.n, ...extra, sample: (cls ? r.sample[cls] : r.sample.any) || null }) }
+  add('first AI trailer', f.firstTrailer, 'trailer', { agents: f.firstTrailer && Object.keys(f.firstTrailer.trailerAgents).map(agentLabel) })
+  add('peak AI trailers', f.peakTrailer, 'trailer', { share: f.peakTrailer && Math.round((100 * f.peakTrailer.counts.trailer) / f.peakTrailer.n) })
+  add('first AI agent account', f.firstAgent, 'agent', {})
+  add('peak bot-named accounts', f.peakBot, 'bot', { share: f.peakBot && Math.round((100 * f.peakBot.counts.bot) / f.peakBot.n), accounts: f.peakBot && Object.entries(f.peakBot.botNames).sort((a, b) => b[1] - a[1]).slice(0, 3) })
+  add('busiest ring', f.busiest, null, {})
 
   const summary = {
     repo: repo.label, out, unit: model.unit, rings: model.rings.length, commits: model.total,
     first: new Date(model.firstT * 1000).toISOString().slice(0, 10), last: new Date(model.lastT * 1000).toISOString().slice(0, 10),
     shares: f.shares, agents: Object.fromEntries(Object.entries(model.agentTotals).map(([k, v]) => [agentLabel(k), v])),
     topBotAccounts: Object.entries(model.botTotals).sort((a, b) => b[1] - a[1]).slice(0, 5),
-    caption: f.lines, notable, sessions: sessionNote,
+    caption: f.lines, notable, sessions: sessionNote, setAside: model.outliers, warnings: repo.warnings || [], shallow: !!repo.shallow,
   }
   if (o.json) console.log(JSON.stringify(summary, null, 2))
   else {
     console.log(`\n${repo.label}: ${model.total.toLocaleString('en-US')} commits, ${model.rings.length} rings (one per ${model.unit})`)
     for (const l of f.lines) console.log(`  ${l}`)
+    if (model.outliers.length) console.log(`  (${model.outliers.length} commit${model.outliers.length > 1 ? 's' : ''} with out-of-range dates set aside: ${model.outliers.slice(0, 3).map((o) => `${o.hash} ${o.date}`).join(', ')}${model.outliers.length > 3 ? ' ...' : ''})`)
     console.log(`\nwrote ${out}`)
   }
   if (o.open) openFile(out)
   return 0
 }
 
-if (import.meta.url === `file://${process.argv[1]}` || process.argv[1]?.endsWith('/rings') || process.argv[1]?.endsWith('rings.mjs')) {
+// run when executed directly, including through npm's symlinked bins (rings, repo-rings)
+const isMain = (() => { try { return fs.realpathSync(process.argv[1]) === fs.realpathSync(fileURLToPath(import.meta.url)) } catch { return false } })()
+if (isMain) {
   main().then((code) => process.exit(code), (e) => { console.error(`rings: ${e.message}`); process.exit(1) })
 }
