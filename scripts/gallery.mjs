@@ -124,6 +124,6 @@ ${cards}
     <li>Maintainers: if you would like your repo removed or a bot list corrected, <a href="https://github.com/vnmoorthy/rings/issues">open an issue</a> and it will be done.</li>
   </ul>
 </section>
-<footer>Built with <a href="https://github.com/vnmoorthy/rings">rings</a>, MIT. Data read from public commit history on ${new Date().toISOString().slice(0, 10)}.</footer>
+<footer>On Product Hunt from Sunday 25 Oct 2026: <a href="https://www.producthunt.com/products/rings-3">producthunt.com/products/rings-3</a>.<br>Built with <a href="https://github.com/vnmoorthy/rings">rings</a>, MIT. Data read from public commit history on ${new Date().toISOString().slice(0, 10)}.</footer>
 </body></html>`
 }
