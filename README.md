@@ -14,7 +14,7 @@ One ring per month since the first commit. Colour wherever the history itself di
   <a href="#中文">中文</a>
 </p>
 
-<p align="center">On Product Hunt from Sunday 25 Oct 2026: <a href="https://www.producthunt.com/products/rings-3">producthunt.com/products/rings-3</a></p>
+<p align="center">On Product Hunt from Friday 23 Oct 2026: <a href="https://www.producthunt.com/products/rings-3">producthunt.com/products/rings-3</a></p>
 
 ```bash
 npx skills add vnmoorthy/rings -g      # then, in Claude Code or Codex: /rings
