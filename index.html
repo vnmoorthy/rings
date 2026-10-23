@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rings · tree rings for Git repos</title>
+<meta name="description" content="Famous repositories cut open like tree trunks: one ring per month, coloured where the history discloses AI co-authors, AI agent accounts or bot-named accounts.">
+<meta property="og:title" content="Rings · tree rings for Git repos"><meta property="og:description" content="Famous codebases cut open like tree trunks, coloured where their commit history discloses AI co-authors, agent accounts or bots. Disclosure is not usage.">
+<meta property="og:image" content="https://vnmoorthy.github.io/rings/r/microsoft--vscode-card.jpg"><meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { color-scheme: dark; --bg:#090706; --ink:#f3e6d3; --muted:#a8998a; }
+  * { box-sizing:border-box } html,body { margin:0; background:var(--bg); color:var(--ink); font:16px/1.55 ui-sans-serif,system-ui,-apple-system,sans-serif }
+  header, section, footer { max-width:1180px; margin:0 auto; padding:0 16px }
+  header { padding-top:56px; padding-bottom:12px }
+  h1 { font:600 clamp(34px,5vw,56px)/1.05 ui-serif,Georgia,'Iowan Old Style',serif; margin:0 0 12px }
+  .lede { color:#e2d3bf; font-size:clamp(16px,2vw,19px); max-width:760px; margin:0 0 18px }
+  pre { background:#15100b; border:1px solid #33261b; border-radius:12px; padding:12px 14px; overflow:auto; font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace; color:#e8c9a0; margin:0 0 10px; max-width:760px }
+  .legend { display:flex; flex-wrap:wrap; gap:8px 18px; color:var(--muted); font-size:14px; margin:18px 0 0 }
+  .lg i { display:inline-block; width:12px; height:12px; border-radius:3px; margin-right:7px; vertical-align:-1px }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; padding-top:22px; padding-bottom:30px }
+  .card { display:block; background:#120d09; border:1px solid #2a1f16; border-radius:14px; overflow:hidden; color:inherit; text-decoration:none; transition:border-color .15s, transform .15s }
+  .card:hover { border-color:#7a5a3e; transform:translateY(-2px) }
+  .card img { display:block; width:100%; height:auto; aspect-ratio:1; background:#0d0a07 }
+  .meta { padding:10px 12px 13px; display:flex; flex-direction:column; gap:3px }
+  .meta b { font-weight:650 } .meta span { color:var(--muted); font-size:13.5px; line-height:1.4 }
+  h2 { font:600 22px/1.2 ui-serif,Georgia,serif; margin:28px 0 8px }
+  .method p, .method li { color:#d8c9b5; max-width:820px } .method li { margin:4px 0 }
+  a { color:#f0c38f }
+  footer { color:var(--muted); font-size:13.5px; padding-top:20px; padding-bottom:48px }
+</style></head>
+<body>
+<header>
+  <h1>Rings</h1>
+  <p class="lede">Famous codebases cut open like tree trunks. One ring per month since the first commit (one per week for repos under two years old), ring width from that period's commits, and colour where the history itself discloses an AI co-author, an AI agent's own account, or a bot-named account.</p>
+  <pre>npx skills add vnmoorthy/rings -g     # then ask your agent: /rings</pre>
+  <pre>npx github:vnmoorthy/rings .          # or any owner/name</pre>
+  <div class="legend"><span class="lg"><i style="background:#ff7a2f"></i>AI co-author / assisted-by trailer</span><span class="lg"><i style="background:#a07cff"></i>AI agent account</span><span class="lg"><i style="background:#1fb7a5"></i>bot-named account</span><span class="lg"><i style="background:#dcb07a"></i>no AI signal (not "human-written")</span></div>
+</header>
+<section class="grid">
+<a class="card" href="r/microsoft--vscode.html"><img src="r/microsoft--vscode.jpg" alt="Tree rings of microsoft/vscode" loading="lazy" width="720" height="720"><div class="meta"><b>microsoft/vscode</b><span>Copilot co-author trailers peaked at 76% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/oven-sh--bun.html"><img src="r/oven-sh--bun.jpg" alt="Tree rings of oven-sh/bun" loading="lazy" width="720" height="720"><div class="meta"><b>oven-sh/bun</b><span>Claude co-author trailers peaked at 62% of commits in Feb 2026.</span></div></a>
+<a class="card" href="r/denoland--deno.html"><img src="r/denoland--deno.jpg" alt="Tree rings of denoland/deno" loading="lazy" width="720" height="720"><div class="meta"><b>denoland/deno</b><span>Claude co-author trailers peaked at 62% of commits in Mar 2026.</span></div></a>
+<a class="card" href="r/astral-sh--uv.html"><img src="r/astral-sh--uv.jpg" alt="Tree rings of astral-sh/uv" loading="lazy" width="720" height="720"><div class="meta"><b>astral-sh/uv</b><span>Claude co-author trailers peaked at 25% of commits in Jan 2026.</span></div></a>
+<a class="card" href="r/astral-sh--ruff.html"><img src="r/astral-sh--ruff.jpg" alt="Tree rings of astral-sh/ruff" loading="lazy" width="720" height="720"><div class="meta"><b>astral-sh/ruff</b><span>Claude co-author trailers peaked at 5% of commits in Feb 2026.</span></div></a>
+<a class="card" href="r/tldraw--tldraw.html"><img src="r/tldraw--tldraw.jpg" alt="Tree rings of tldraw/tldraw" loading="lazy" width="720" height="720"><div class="meta"><b>tldraw/tldraw</b><span>Claude co-author trailers peaked at 27% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/zed-industries--zed.html"><img src="r/zed-industries--zed.jpg" alt="Tree rings of zed-industries/zed" loading="lazy" width="720" height="720"><div class="meta"><b>zed-industries/zed</b><span>Claude and Amp co-author trailers peaked at 5% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/ghostty-org--ghostty.html"><img src="r/ghostty-org--ghostty.jpg" alt="Tree rings of ghostty-org/ghostty" loading="lazy" width="720" height="720"><div class="meta"><b>ghostty-org/ghostty</b><span>Claude co-author trailers peaked at 5% of commits in Mar 2026.</span></div></a>
+<a class="card" href="r/openai--codex.html"><img src="r/openai--codex.jpg" alt="Tree rings of openai/codex" loading="lazy" width="720" height="720"><div class="meta"><b>openai/codex</b><span>Codex co-author trailers peaked at 20% of commits in the week of 16 Mar 2026.</span></div></a>
+<a class="card" href="r/sst--opencode.html"><img src="r/sst--opencode.jpg" alt="Tree rings of sst/opencode" loading="lazy" width="720" height="720"><div class="meta"><b>sst/opencode</b><span>opencode co-author trailers peaked at 14% of commits in the week of 9 Jun 2025.</span></div></a>
+<a class="card" href="r/cline--cline.html"><img src="r/cline--cline.jpg" alt="Tree rings of cline/cline" loading="lazy" width="720" height="720"><div class="meta"><b>cline/cline</b><span>Claude co-author trailers peaked at 10% of commits in Sep 2026.</span></div></a>
+<a class="card" href="r/Aider-AI--aider.html"><img src="r/Aider-AI--aider.jpg" alt="Tree rings of Aider-AI/aider" loading="lazy" width="720" height="720"><div class="meta"><b>Aider-AI/aider</b><span>Aider-marked authors peaked at 62% of commits in Mar 2025.</span></div></a>
+<a class="card" href="r/anthropics--claude-code.html"><img src="r/anthropics--claude-code.jpg" alt="Tree rings of anthropics/claude-code" loading="lazy" width="720" height="720"><div class="meta"><b>anthropics/claude-code</b><span>Claude co-author trailers peaked at 67% of commits in the week of 4 Aug 2025.</span></div></a>
+<a class="card" href="r/vercel--next.js.html"><img src="r/vercel--next.js.jpg" alt="Tree rings of vercel/next.js" loading="lazy" width="720" height="720"><div class="meta"><b>vercel/next.js</b><span>Claude co-author trailers peaked at 13% of commits in Apr 2026.</span></div></a>
+<a class="card" href="r/facebook--react.html"><img src="r/facebook--react.jpg" alt="Tree rings of facebook/react" loading="lazy" width="720" height="720"><div class="meta"><b>facebook/react</b><span>Claude co-author trailers peaked at 29% of commits in Aug 2026.</span></div></a>
+<a class="card" href="r/vitejs--vite.html"><img src="r/vitejs--vite.jpg" alt="Tree rings of vitejs/vite" loading="lazy" width="720" height="720"><div class="meta"><b>vitejs/vite</b><span>Copilot and Claude co-author trailers peaked at 5% of commits in Jun 2026.</span></div></a>
+<a class="card" href="r/sveltejs--svelte.html"><img src="r/sveltejs--svelte.jpg" alt="Tree rings of sveltejs/svelte" loading="lazy" width="720" height="720"><div class="meta"><b>sveltejs/svelte</b><span>Codex and Copilot co-author trailers peaked at 6% of commits in Apr 2026.</span></div></a>
+<a class="card" href="r/tailwindlabs--tailwindcss.html"><img src="r/tailwindlabs--tailwindcss.jpg" alt="Tree rings of tailwindlabs/tailwindcss" loading="lazy" width="720" height="720"><div class="meta"><b>tailwindlabs/tailwindcss</b><span>Claude co-author trailers peaked at 14% of commits in Jan 2026.</span></div></a>
+<a class="card" href="r/withastro--astro.html"><img src="r/withastro--astro.jpg" alt="Tree rings of withastro/astro" loading="lazy" width="720" height="720"><div class="meta"><b>withastro/astro</b><span>31 of 15,073 commits disclose AI (a trailer or an agent account), the first in Oct 2025.</span></div></a>
+<a class="card" href="r/supabase--supabase.html"><img src="r/supabase--supabase.jpg" alt="Tree rings of supabase/supabase" loading="lazy" width="720" height="720"><div class="meta"><b>supabase/supabase</b><span>Claude co-author trailers peaked at 14% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/excalidraw--excalidraw.html"><img src="r/excalidraw--excalidraw.jpg" alt="Tree rings of excalidraw/excalidraw" loading="lazy" width="720" height="720"><div class="meta"><b>excalidraw/excalidraw</b><span>Claude co-author trailers peaked at 18% of commits in Sep 2026.</span></div></a>
+<a class="card" href="r/ollama--ollama.html"><img src="r/ollama--ollama.jpg" alt="Tree rings of ollama/ollama" loading="lazy" width="720" height="720"><div class="meta"><b>ollama/ollama</b><span>4 of 5,095 commits disclose AI (a trailer or an agent account), the first in Mar 2026.</span></div></a>
+<a class="card" href="r/ggml-org--llama.cpp.html"><img src="r/ggml-org--llama.cpp.jpg" alt="Tree rings of ggml-org/llama.cpp" loading="lazy" width="720" height="720"><div class="meta"><b>ggml-org/llama.cpp</b><span>AI disclosures naming Claude and pi peaked at 18% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/huggingface--transformers.html"><img src="r/huggingface--transformers.jpg" alt="Tree rings of huggingface/transformers" loading="lazy" width="720" height="720"><div class="meta"><b>huggingface/transformers</b><span>Claude co-author trailers peaked at 23% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/langchain-ai--langchain.html"><img src="r/langchain-ai--langchain.jpg" alt="Tree rings of langchain-ai/langchain" loading="lazy" width="720" height="720"><div class="meta"><b>langchain-ai/langchain</b><span>Open SWE co-author trailers peaked at 22% of commits in Sep 2026.</span></div></a>
+<a class="card" href="r/vercel--ai.html"><img src="r/vercel--ai.jpg" alt="Tree rings of vercel/ai" loading="lazy" width="720" height="720"><div class="meta"><b>vercel/ai</b><span>Cursor and Claude co-author trailers peaked at 15% of commits in May 2026.</span></div></a>
+<a class="card" href="r/shadcn-ui--ui.html"><img src="r/shadcn-ui--ui.jpg" alt="Tree rings of shadcn-ui/ui" loading="lazy" width="720" height="720"><div class="meta"><b>shadcn-ui/ui</b><span>Claude and Cursor co-author trailers peaked at 13% of commits in Jun 2026.</span></div></a>
+<a class="card" href="r/n8n-io--n8n.html"><img src="r/n8n-io--n8n.jpg" alt="Tree rings of n8n-io/n8n" loading="lazy" width="720" height="720"><div class="meta"><b>n8n-io/n8n</b><span>Claude co-author trailers peaked at 51% of commits in Aug 2026.</span></div></a>
+<a class="card" href="r/biomejs--biome.html"><img src="r/biomejs--biome.jpg" alt="Tree rings of biomejs/biome" loading="lazy" width="720" height="720"><div class="meta"><b>biomejs/biome</b><span>Claude co-author trailers peaked at 12% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/oxc-project--oxc.html"><img src="r/oxc-project--oxc.jpg" alt="Tree rings of oxc-project/oxc" loading="lazy" width="720" height="720"><div class="meta"><b>oxc-project/oxc</b><span>AI disclosures naming Claude peaked at 12% of commits in Jan 2026.</span></div></a>
+<a class="card" href="r/microsoft--TypeScript.html"><img src="r/microsoft--TypeScript.jpg" alt="Tree rings of microsoft/TypeScript" loading="lazy" width="720" height="720"><div class="meta"><b>microsoft/TypeScript</b><span>Copilot co-author trailers peaked at 8% of commits in Sep 2026.</span></div></a>
+<a class="card" href="r/nodejs--node.html"><img src="r/nodejs--node.jpg" alt="Tree rings of nodejs/node" loading="lazy" width="720" height="720"><div class="meta"><b>nodejs/node</b><span>AI disclosures naming opencode and Codex peaked at 41% of commits in Oct 2026 (so far).</span></div></a>
+<a class="card" href="r/neovim--neovim.html"><img src="r/neovim--neovim.jpg" alt="Tree rings of neovim/neovim" loading="lazy" width="720" height="720"><div class="meta"><b>neovim/neovim</b><span>&quot;AI-assisted&quot; disclosures peaked at 24% of commits in Sep 2026.</span></div></a>
+<a class="card" href="r/tauri-apps--tauri.html"><img src="r/tauri-apps--tauri.jpg" alt="Tree rings of tauri-apps/tauri" loading="lazy" width="720" height="720"><div class="meta"><b>tauri-apps/tauri</b><span>3 of 6,292 commits disclose AI (a trailer or an agent account), the first in Apr 2026.</span></div></a>
+<a class="card" href="r/pydantic--pydantic.html"><img src="r/pydantic--pydantic.jpg" alt="Tree rings of pydantic/pydantic" loading="lazy" width="720" height="720"><div class="meta"><b>pydantic/pydantic</b><span>Codeflash co-author trailers peaked at 10% of commits in Jul 2024.</span></div></a>
+<a class="card" href="r/fastapi--fastapi.html"><img src="r/fastapi--fastapi.jpg" alt="Tree rings of fastapi/fastapi" loading="lazy" width="720" height="720"><div class="meta"><b>fastapi/fastapi</b><span>3 of 7,822 commits disclose AI (a trailer or an agent account), the first in Feb 2026.</span></div></a>
+<a class="card" href="r/dotnet--runtime.html"><img src="r/dotnet--runtime.jpg" alt="Tree rings of dotnet/runtime" loading="lazy" width="720" height="720"><div class="meta"><b>dotnet/runtime</b><span>Copilot co-author trailers peaked at 59% of commits in Oct 2026 (so far).</span></div></a>
+</section>
+<section class="method">
+  <h2>How to read it</h2>
+  <ul>
+    <li><b>Disclosure is not usage.</b> Rings only sees what commits say. Many people use AI without a trailer, and a trailer can be added or removed by settings. A ring with no colour means no signal, never "written by a human".</li>
+    <li><b>AI co-author / assisted-by trailer:</b> a <code>Co-authored-by</code> line naming a coding agent by its own display name or no-reply address (for example <code>Claude &lt;noreply@anthropic.com&gt;</code>), or an <code>Assisted-by</code>, <code>AI-assisted</code> or <code>Generated with …</code> line naming a tool. Lines that GitHub squash merges push out of the trailer block are read too. Company email domains and people's full names (Claude Paroz, Devin Weaver) are not counted.</li>
+    <li><b>AI agent account:</b> the commit author is an agent's own account, such as <code>copilot-swe-agent[bot]</code>, <code>devin-ai-integration[bot]</code> or <code>google-labs-jules[bot]</code>.</li>
+    <li><b>Bot-named account:</b> an author whose name or address marks it as automation (<code>[bot]</code>, <code>*-bot</code>, <code>… Bot</code>, <code>github-actions</code>, <code>robobun@oven.sh</code> ...), plus routine chores (generated files, lockfiles, formatting) pushed by an agent's account. Rings does not know what runs behind such an account.</li>
+    <li>Non-merge commits reachable from the default branch, grouped by author date in UTC. Ring width is the square root of the month's commits, capped at 2.5 times the median so one burst cannot flatten the rest.</li>
+    <li>Maintainers: if you would like your repo removed or a bot list corrected, <a href="https://github.com/vnmoorthy/rings/issues">open an issue</a> and it will be done.</li>
+  </ul>
+</section>
+<footer>On Product Hunt from Friday 23 Oct 2026: <a href="https://www.producthunt.com/products/rings-3">producthunt.com/products/rings-3</a>.<br>Built with <a href="https://github.com/vnmoorthy/rings">rings</a>, MIT. Data read from public commit history on 2026-10-17.</footer>
+</body></html>

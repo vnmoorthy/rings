@@ -1,0 +1,1480 @@
+[
+ {
+  "repo": "microsoft/vscode",
+  "slug": "microsoft--vscode",
+  "commits": 150140,
+  "unit": "month",
+  "rings": 132,
+  "first": "2015-11-13",
+  "shares": {
+   "trailer": 5,
+   "agent": 1,
+   "bot": 0,
+   "session": 0,
+   "none": 94
+  },
+  "lines": [
+   "Copilot co-author trailers peaked at 76% of commits in Oct 2026 (so far).",
+   "AI agent accounts authored 8% of commits in Jun 2025.",
+   "Busiest month: Mar 2026, 2,711 commits."
+  ],
+  "agents": {
+   "copilot": 8096,
+   "cursor": 7,
+   "claude": 69
+  },
+  "topBots": [
+   [
+    "Copilot",
+    642
+   ],
+   [
+    "copilot-swe-agent[bot]",
+    467
+   ],
+   [
+    "dependabot[bot]",
+    466
+   ]
+  ],
+  "ms": 11933
+ },
+ {
+  "repo": "oven-sh/bun",
+  "slug": "oven-sh--bun",
+  "commits": 18413,
+  "unit": "month",
+  "rings": 67,
+  "first": "2021-04-17",
+  "shares": {
+   "trailer": 4,
+   "agent": 0,
+   "bot": 14,
+   "session": 0,
+   "none": 82
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 62% of commits in Feb 2026.",
+   "One account, robobun, authored 87% of commits in Jul 2026.",
+   "Busiest month: Aug 2026, 1,042 commits."
+  ],
+  "agents": {
+   "claude": 710,
+   "cursor": 6,
+   "devin": 1,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "robobun",
+    2567
+   ],
+   [
+    "github-actions[bot]",
+    45
+   ],
+   [
+    "dependabot[bot]",
+    4
+   ]
+  ],
+  "ms": 15998
+ },
+ {
+  "repo": "denoland/deno",
+  "slug": "denoland--deno",
+  "commits": 17380,
+  "unit": "month",
+  "rings": 102,
+  "first": "2018-05-14",
+  "shares": {
+   "trailer": 2,
+   "agent": 0,
+   "bot": 2,
+   "session": 0,
+   "none": 95
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 62% of commits in Mar 2026.",
+   "Busiest month: Jun 2026, 589 commits."
+  ],
+  "agents": {
+   "copilot": 23,
+   "claude": 405,
+   "codex": 2,
+   "cursor": 3
+  },
+  "topBots": [
+   [
+    "denobot",
+    176
+   ],
+   [
+    "nathanwhitbot",
+    96
+   ],
+   [
+    "crowlbot",
+    63
+   ]
+  ],
+  "ms": 5967
+ },
+ {
+  "repo": "astral-sh/uv",
+  "slug": "astral-sh--uv",
+  "commits": 11075,
+  "unit": "month",
+  "rings": 37,
+  "first": "2023-10-04",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 18,
+   "session": 0,
+   "none": 81
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 25% of commits in Jan 2026.",
+   "Bot-named accounts authored 56% of commits in Aug 2026.",
+   "Busiest month: Aug 2024, 600 commits."
+  ],
+  "agents": {
+   "copilot": 3,
+   "claude": 147,
+   "codex": 10,
+   "openai": 3
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    1319
+   ],
+   [
+    "astral-automations-bot[bot]",
+    419
+   ],
+   [
+    "zaniebot",
+    143
+   ]
+  ],
+  "ms": 5255
+ },
+ {
+  "repo": "astral-sh/ruff",
+  "slug": "astral-sh--ruff",
+  "commits": 17656,
+  "unit": "month",
+  "rings": 51,
+  "first": "2022-08-09",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 11,
+   "session": 0,
+   "none": 89
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 5% of commits in Feb 2026.",
+   "Busiest month: Jan 2023, 717 commits."
+  ],
+  "agents": {
+   "claude": 70,
+   "codex": 9
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    1577
+   ],
+   [
+    "dependabot[bot]",
+    183
+   ],
+   [
+    "github-actions[bot]",
+    75
+   ]
+  ],
+  "ms": 6107
+ },
+ {
+  "repo": "tldraw/tldraw",
+  "slug": "tldraw--tldraw",
+  "commits": 6730,
+  "unit": "month",
+  "rings": 66,
+  "first": "2021-05-09",
+  "shares": {
+   "trailer": 4,
+   "agent": 0,
+   "bot": 3,
+   "session": 0,
+   "none": 93
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 27% of commits in Oct 2026 (so far).",
+   "Busiest month: Sep 2026, 318 commits."
+  ],
+  "agents": {
+   "copilot": 14,
+   "cursor": 28,
+   "claude": 237
+  },
+  "topBots": [
+   [
+    "huppy-bot[bot]",
+    117
+   ],
+   [
+    "github-actions[bot]",
+    50
+   ],
+   [
+    "dependabot[bot]",
+    43
+   ]
+  ],
+  "ms": 5630
+ },
+ {
+  "repo": "zed-industries/zed",
+  "slug": "zed-industries--zed",
+  "commits": 37299,
+  "unit": "month",
+  "rings": 69,
+  "first": "2021-02-20",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 1,
+   "session": 0,
+   "none": 98
+  },
+  "lines": [
+   "Claude and Amp co-author trailers peaked at 5% of commits in Oct 2026 (so far).",
+   "Busiest month: Jan 2024, 1,071 commits."
+  ],
+  "agents": {
+   "zed": 7,
+   "claude": 120,
+   "copilot": 9,
+   "ai": 1,
+   "factory": 11,
+   "amp": 20,
+   "cursor": 3,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    366
+   ],
+   [
+    "zed-zippy[bot]",
+    38
+   ],
+   [
+    "Zed Bot",
+    2
+   ]
+  ],
+  "ms": 7525
+ },
+ {
+  "repo": "ghostty-org/ghostty",
+  "slug": "ghostty-org--ghostty",
+  "commits": 13687,
+  "unit": "month",
+  "rings": 56,
+  "first": "2022-03-29",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 4,
+   "session": 0,
+   "none": 96
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 5% of commits in Mar 2026.",
+   "Bot-named accounts authored 26% of commits in Jun 2026.",
+   "Busiest month: Mar 2026, 581 commits."
+  ],
+  "agents": {
+   "ai": 1,
+   "copilot": 1,
+   "amp": 7,
+   "claude": 67,
+   "codex": 2,
+   "openai": 1,
+   "cursor": 3,
+   "gemini": 2
+  },
+  "topBots": [
+   [
+    "ghostty-vouch[bot]",
+    311
+   ],
+   [
+    "dependabot[bot]",
+    161
+   ],
+   [
+    "github-actions[bot]",
+    26
+   ]
+  ],
+  "ms": 4665
+ },
+ {
+  "repo": "openai/codex",
+  "slug": "openai--codex",
+  "commits": 12326,
+  "unit": "week",
+  "rings": 79,
+  "first": "2025-04-16",
+  "shares": {
+   "trailer": 3,
+   "agent": 0,
+   "bot": 1,
+   "session": 0,
+   "none": 96
+  },
+  "lines": [
+   "Codex co-author trailers peaked at 20% of commits in the week of 16 Mar 2026.",
+   "Busiest week: the week of 21 Sep 2026, 430 commits."
+  ],
+  "agents": {
+   "claude": 10,
+   "codex": 352,
+   "copilot": 3
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    126
+   ],
+   [
+    "github-actions[bot]",
+    15
+   ]
+  ],
+  "ms": 5656
+ },
+ {
+  "repo": "sst/opencode",
+  "slug": "sst--opencode",
+  "commits": 20447,
+  "unit": "week",
+  "rings": 83,
+  "first": "2025-03-21",
+  "shares": {
+   "trailer": 1,
+   "agent": 4,
+   "bot": 13,
+   "session": 0,
+   "none": 82
+  },
+  "lines": [
+   "opencode co-author trailers peaked at 14% of commits in the week of 9 Jun 2025.",
+   "AI agent accounts authored 21% of commits in the week of 3 Aug 2026.",
+   "One account, opencode-agent[bot], authored 29% of commits in the week of 18 May 2026.",
+   "Busiest week: the week of 24 Aug 2026, 656 commits."
+  ],
+  "agents": {
+   "opencode": 1050,
+   "jules": 1,
+   "claude": 38,
+   "copilot": 12,
+   "cursor": 3
+  },
+  "topBots": [
+   [
+    "opencode-agent[bot]",
+    2532
+   ],
+   [
+    "GitHub Action",
+    839
+   ],
+   [
+    "Github Action",
+    142
+   ]
+  ],
+  "ms": 5539
+ },
+ {
+  "repo": "cline/cline",
+  "slug": "cline--cline",
+  "commits": 7535,
+  "unit": "month",
+  "rings": 28,
+  "first": "2024-07-06",
+  "shares": {
+   "trailer": 3,
+   "agent": 0,
+   "bot": 2,
+   "session": 0,
+   "none": 95
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 10% of commits in Sep 2026.",
+   "Busiest month: Mar 2026, 445 commits."
+  ],
+  "agents": {
+   "copilot": 46,
+   "claude": 71,
+   "cursor": 51,
+   "cline": 26
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    147
+   ],
+   [
+    "dependabot[bot]",
+    25
+   ],
+   [
+    "cline-cloud[bot]",
+    8
+   ]
+  ],
+  "ms": 5911
+ },
+ {
+  "repo": "Aider-AI/aider",
+  "slug": "Aider-AI--aider",
+  "commits": 12461,
+  "unit": "month",
+  "rings": 38,
+  "first": "2023-04-04",
+  "shares": {
+   "trailer": 30,
+   "agent": 0,
+   "bot": 0,
+   "session": 0,
+   "none": 70
+  },
+  "lines": [
+   "Aider-marked authors peaked at 62% of commits in Mar 2025.",
+   "Busiest month: Aug 2024, 1,566 commits."
+  ],
+  "agents": {
+   "aider": 3727,
+   "claude": 1
+  },
+  "topBots": [
+   [
+    "KhulnaSoft bot",
+    1
+   ]
+  ],
+  "ms": 12514
+ },
+ {
+  "repo": "anthropics/claude-code",
+  "slug": "anthropics--claude-code",
+  "commits": 787,
+  "unit": "week",
+  "rings": 87,
+  "first": "2025-02-22",
+  "shares": {
+   "trailer": 8,
+   "agent": 2,
+   "bot": 60,
+   "session": 0,
+   "none": 29
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 67% of commits in the week of 4 Aug 2025.",
+   "AI agent accounts authored 24% of commits in the week of 28 Sep 2026.",
+   "One account, GitHub Actions, authored 100% of commits in the week of 13 Apr 2026.",
+   "Busiest week: the week of 7 Sep 2026, 80 commits."
+  ],
+  "agents": {
+   "claude": 79
+  },
+  "topBots": [
+   [
+    "GitHub Actions",
+    466
+   ],
+   [
+    "Claude",
+    12
+   ],
+   [
+    "GitHub Actions (publish-mods)",
+    10
+   ]
+  ],
+  "ms": 11391
+ },
+ {
+  "repo": "vercel/next.js",
+  "slug": "vercel--next.js",
+  "commits": 36077,
+  "unit": "month",
+  "rings": 121,
+  "first": "2016-10-05",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 8,
+   "session": 0,
+   "none": 91
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 13% of commits in Apr 2026.",
+   "One account, greenkeeper[bot], authored 31% of commits in Mar 2017.",
+   "Busiest month: Oct 2022, 754 commits."
+  ],
+  "agents": {
+   "devin": 3,
+   "copilot": 7,
+   "cursor": 53,
+   "claude": 202,
+   "ai": 2
+  },
+  "topBots": [
+   [
+    "vercel-release-bot",
+    1319
+   ],
+   [
+    "Vercel Release Bot",
+    643
+   ],
+   [
+    "nextjs-bot",
+    598
+   ]
+  ],
+  "ms": 9358
+ },
+ {
+  "repo": "facebook/react",
+  "slug": "facebook--react",
+  "commits": 19127,
+  "unit": "month",
+  "rings": 162,
+  "first": "2013-05-28",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 1,
+   "session": 0,
+   "none": 99
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 29% of commits in Aug 2026.",
+   "Busiest month: Apr 2019, 455 commits."
+  ],
+  "agents": {
+   "claude": 31,
+   "cursor": 3,
+   "amp": 1,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    96
+   ],
+   [
+    "Facebook Community Bot",
+    2
+   ]
+  ],
+  "ms": 7328
+ },
+ {
+  "repo": "vitejs/vite",
+  "slug": "vitejs--vite",
+  "commits": 9723,
+  "unit": "month",
+  "rings": 79,
+  "first": "2020-04-20",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 5,
+   "session": 0,
+   "none": 94
+  },
+  "lines": [
+   "Copilot and Claude co-author trailers peaked at 5% of commits in Jun 2026.",
+   "AI agent accounts authored 9% of commits in Aug 2025.",
+   "Busiest month: Jan 2021, 672 commits."
+  ],
+  "agents": {
+   "copilot": 43,
+   "claude": 16,
+   "warp": 1,
+   "codex": 5,
+   "cursor": 1
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    475
+   ],
+   [
+    "Copilot",
+    37
+   ],
+   [
+    "github-actions[bot]",
+    9
+   ]
+  ],
+  "ms": 4823
+ },
+ {
+  "repo": "sveltejs/svelte",
+  "slug": "sveltejs--svelte",
+  "commits": 9899,
+  "unit": "month",
+  "rings": 120,
+  "first": "2016-11-16",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 7,
+   "session": 0,
+   "none": 93
+  },
+  "lines": [
+   "Codex and Copilot co-author trailers peaked at 6% of commits in Apr 2026.",
+   "One account, github-actions[bot], authored 28% of commits in May 2025.",
+   "Busiest month: Apr 2019, 287 commits."
+  ],
+  "agents": {
+   "claude": 18,
+   "copilot": 3,
+   "codex": 2
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    636
+   ],
+   [
+    "dependabot[bot]",
+    49
+   ],
+   [
+    "svelte-triage-bot[bot]",
+    15
+   ]
+  ],
+  "ms": 6922
+ },
+ {
+  "repo": "tailwindlabs/tailwindcss",
+  "slug": "tailwindlabs--tailwindcss",
+  "commits": 6073,
+  "unit": "month",
+  "rings": 112,
+  "first": "2017-07-20",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 14,
+   "session": 0,
+   "none": 86
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 14% of commits in Jan 2026.",
+   "One account, dependabot-preview[bot], authored 86% of commits in Nov 2019.",
+   "Busiest month: Oct 2017, 376 commits."
+  ],
+  "agents": {
+   "claude": 12,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "depfu[bot]",
+    614
+   ],
+   [
+    "dependabot-preview[bot]",
+    189
+   ],
+   [
+    "dependabot[bot]",
+    54
+   ]
+  ],
+  "ms": 5221
+ },
+ {
+  "repo": "withastro/astro",
+  "slug": "withastro--astro",
+  "commits": 15073,
+  "unit": "month",
+  "rings": 68,
+  "first": "2021-03-15",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 18,
+   "session": 0,
+   "none": 82
+  },
+  "lines": [
+   "31 of 15,073 commits disclose AI (a trailer or an agent account), the first in Oct 2025.",
+   "Bot-named accounts authored 73% of commits in Oct 2026 (so far).",
+   "Busiest month: Aug 2023, 591 commits."
+  ],
+  "agents": {
+   "claude": 21,
+   "copilot": 8,
+   "cursor": 2
+  },
+  "topBots": [
+   [
+    "Houston (Bot)",
+    1375
+   ],
+   [
+    "github-actions[bot]",
+    594
+   ],
+   [
+    "renovate[bot]",
+    389
+   ]
+  ],
+  "ms": 4879
+ },
+ {
+  "repo": "supabase/supabase",
+  "slug": "supabase--supabase",
+  "commits": 32220,
+  "unit": "month",
+  "rings": 85,
+  "first": "2019-10-12",
+  "shares": {
+   "trailer": 2,
+   "agent": 0,
+   "bot": 2,
+   "session": 0,
+   "none": 97
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 14% of commits in Oct 2026 (so far).",
+   "AI agent accounts authored 5% of commits in Oct 2026 (so far).",
+   "Busiest month: Dec 2022, 1,207 commits."
+  ],
+  "agents": {
+   "devin": 1,
+   "claude": 466,
+   "cursor": 48,
+   "copilot": 51,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    222
+   ],
+   [
+    "supabase-supabase-autofixer[bot]",
+    135
+   ],
+   [
+    "github-actions[bot]",
+    111
+   ]
+  ],
+  "ms": 6188
+ },
+ {
+  "repo": "excalidraw/excalidraw",
+  "slug": "excalidraw--excalidraw",
+  "commits": 4090,
+  "unit": "month",
+  "rings": 82,
+  "first": "2020-01-02",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 22,
+   "session": 0,
+   "none": 78
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 18% of commits in Sep 2026.",
+   "One account, dependabot[bot], authored 81% of commits in Aug 2021.",
+   "Busiest month: Jan 2020, 382 commits."
+  ],
+  "agents": {
+   "copilot": 2,
+   "cursor": 1,
+   "claude": 10
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    605
+   ],
+   [
+    "dependabot-preview[bot]",
+    232
+   ],
+   [
+    "Excalidraw Bot",
+    70
+   ]
+  ],
+  "ms": 4334
+ },
+ {
+  "repo": "ollama/ollama",
+  "slug": "ollama--ollama",
+  "commits": 5095,
+  "unit": "month",
+  "rings": 41,
+  "first": "2023-06-22",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 0,
+   "session": 0,
+   "none": 100
+  },
+  "lines": [
+   "4 of 5,095 commits disclose AI (a trailer or an agent account), the first in Mar 2026.",
+   "Busiest month: Jul 2023, 367 commits."
+  ],
+  "agents": {
+   "claude": 2,
+   "copilot": 1,
+   "codex": 1
+  },
+  "topBots": [],
+  "ms": 4954
+ },
+ {
+  "repo": "ggml-org/llama.cpp",
+  "slug": "ggml-org--llama.cpp",
+  "commits": 11714,
+  "unit": "month",
+  "rings": 44,
+  "first": "2023-03-10",
+  "shares": {
+   "trailer": 3,
+   "agent": 0,
+   "bot": 0,
+   "session": 0,
+   "none": 97
+  },
+  "lines": [
+   "AI disclosures naming Claude and pi peaked at 18% of commits in Oct 2026 (so far).",
+   "Busiest month: Sep 2026, 582 commits."
+  ],
+  "agents": {
+   "copilot": 10,
+   "openhands": 1,
+   "claude": 99,
+   "pi": 130,
+   "codex": 26,
+   "qwen": 4,
+   "opencode": 15,
+   "deepseek": 9,
+   "openai": 1,
+   "glm": 1,
+   "kimi": 1,
+   "ai": 2
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    8
+   ],
+   [
+    "Copilot",
+    2
+   ]
+  ],
+  "ms": 4977
+ },
+ {
+  "repo": "huggingface/transformers",
+  "slug": "huggingface--transformers",
+  "commits": 23842,
+  "unit": "month",
+  "rings": 97,
+  "first": "2018-10-29",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 1,
+   "session": 0,
+   "none": 98
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 23% of commits in Oct 2026 (so far).",
+   "Busiest month: Dec 2019, 458 commits."
+  ],
+  "agents": {
+   "openhands": 3,
+   "claude": 249,
+   "jules": 1,
+   "copilot": 6,
+   "cursor": 7,
+   "codex": 2
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    151
+   ],
+   [
+    "sergereview[bot]",
+    25
+   ],
+   [
+    "hf-security-analysis[bot]",
+    7
+   ]
+  ],
+  "ms": 6047
+ },
+ {
+  "repo": "langchain-ai/langchain",
+  "slug": "langchain-ai--langchain",
+  "commits": 16873,
+  "unit": "month",
+  "rings": 49,
+  "first": "2022-10-24",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 5,
+   "session": 0,
+   "none": 95
+  },
+  "lines": [
+   "Open SWE co-author trailers peaked at 22% of commits in Sep 2026.",
+   "One account, dependabot[bot], authored 56% of commits in Oct 2026 (so far).",
+   "Busiest month: Aug 2023, 772 commits."
+  ],
+  "agents": {
+   "copilot": 27,
+   "opeswe": 83,
+   "claude": 20
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    623
+   ],
+   [
+    "langchain-oss-model-profiles[bot]",
+    79
+   ],
+   [
+    "langchain-model-profile-bot[bot]",
+    69
+   ]
+  ],
+  "ms": 5891
+ },
+ {
+  "repo": "vercel/ai",
+  "slug": "vercel--ai",
+  "commits": 9107,
+  "unit": "month",
+  "rings": 42,
+  "first": "2023-05-23",
+  "shares": {
+   "trailer": 3,
+   "agent": 0,
+   "bot": 28,
+   "session": 0,
+   "none": 69
+  },
+  "lines": [
+   "Cursor and Claude co-author trailers peaked at 15% of commits in May 2026.",
+   "Bot-named accounts authored 50% of commits in Sep 2026.",
+   "Busiest month: Sep 2026, 536 commits."
+  ],
+  "agents": {
+   "devin": 1,
+   "copilot": 12,
+   "claude": 201,
+   "cursor": 49,
+   "ai": 1
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    1102
+   ],
+   [
+    "vercel-ai-sdk[bot]",
+    887
+   ],
+   [
+    "ai-sdk-factory[bot]",
+    472
+   ]
+  ],
+  "ms": 5938
+ },
+ {
+  "repo": "shadcn-ui/ui",
+  "slug": "shadcn-ui--ui",
+  "commits": 2248,
+  "unit": "month",
+  "rings": 46,
+  "first": "2023-01-24",
+  "shares": {
+   "trailer": 3,
+   "agent": 0,
+   "bot": 10,
+   "session": 0,
+   "none": 87
+  },
+  "lines": [
+   "Claude and Cursor co-author trailers peaked at 13% of commits in Jun 2026.",
+   "One account, dependabot[bot], authored 51% of commits in Oct 2026 (so far).",
+   "Busiest month: Mar 2026, 218 commits."
+  ],
+  "agents": {
+   "claude": 36,
+   "copilot": 12,
+   "cursor": 18,
+   "devin": 1
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    125
+   ],
+   [
+    "dependabot[bot]",
+    97
+   ],
+   [
+    "Copilot",
+    2
+   ]
+  ],
+  "ms": 4269
+ },
+ {
+  "repo": "n8n-io/n8n",
+  "slug": "n8n-io--n8n",
+  "commits": 25040,
+  "unit": "month",
+  "rings": 89,
+  "first": "2019-06-23",
+  "shares": {
+   "trailer": 13,
+   "agent": 0,
+   "bot": 2,
+   "session": 0,
+   "none": 85
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 51% of commits in Aug 2026.",
+   "Busiest month: Sep 2026, 1,432 commits."
+  ],
+  "agents": {
+   "copilot": 7,
+   "claude": 2906,
+   "cursor": 356,
+   "codex": 5,
+   "junie": 1
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    164
+   ],
+   [
+    "n8n-assistant[bot]",
+    161
+   ],
+   [
+    "n8n-cat-bot[bot]",
+    117
+   ]
+  ],
+  "ms": 5435
+ },
+ {
+  "repo": "biomejs/biome",
+  "slug": "biomejs--biome",
+  "commits": 10790,
+  "unit": "month",
+  "rings": 81,
+  "first": "2020-02-27",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 9,
+   "session": 0,
+   "none": 90
+  },
+  "lines": [
+   "Claude co-author trailers peaked at 12% of commits in Oct 2026 (so far).",
+   "One account, renovate[bot], authored 40% of commits in Dec 2024.",
+   "Busiest month: Mar 2020, 368 commits."
+  ],
+  "agents": {
+   "claude": 95,
+   "copilot": 5,
+   "codex": 3
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    848
+   ],
+   [
+    "github-actions[bot]",
+    86
+   ],
+   [
+    "autofix-ci[bot]",
+    14
+   ]
+  ],
+  "ms": 4404
+ },
+ {
+  "repo": "oxc-project/oxc",
+  "slug": "oxc-project--oxc",
+  "commits": 21224,
+  "unit": "month",
+  "rings": 45,
+  "first": "2023-02-09",
+  "shares": {
+   "trailer": 3,
+   "agent": 1,
+   "bot": 6,
+   "session": 0,
+   "none": 90
+  },
+  "lines": [
+   "AI disclosures naming Claude peaked at 12% of commits in Jan 2026.",
+   "AI agent accounts authored 8% of commits in Aug 2025.",
+   "Busiest month: Dec 2025, 881 commits."
+  ],
+  "agents": {
+   "copilot": 152,
+   "claude": 492,
+   "codex": 20,
+   "cursor": 3,
+   "ai": 57
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    790
+   ],
+   [
+    "renovate",
+    285
+   ],
+   [
+    "oxc-bot",
+    181
+   ]
+  ],
+  "ms": 6415
+ },
+ {
+  "repo": "microsoft/TypeScript",
+  "slug": "microsoft--TypeScript",
+  "commits": 31781,
+  "unit": "month",
+  "rings": 148,
+  "first": "2014-07-08",
+  "shares": {
+   "trailer": 0,
+   "agent": 1,
+   "bot": 4,
+   "session": 0,
+   "none": 95
+  },
+  "lines": [
+   "Copilot co-author trailers peaked at 8% of commits in Sep 2026.",
+   "AI agent accounts authored 40% of commits in May 2026.",
+   "One account, TypeScript Bot, authored 28% of commits in Feb 2024.",
+   "Busiest month: Nov 2014, 588 commits."
+  ],
+  "agents": {
+   "copilot": 436,
+   "claude": 5,
+   "codex": 1
+  },
+  "topBots": [
+   [
+    "TypeScript Bot",
+    1001
+   ],
+   [
+    "Copilot",
+    342
+   ],
+   [
+    "dependabot[bot]",
+    132
+   ]
+  ],
+  "ms": 5382
+ },
+ {
+  "repo": "nodejs/node",
+  "slug": "nodejs--node",
+  "commits": 48766,
+  "unit": "month",
+  "rings": 213,
+  "first": "2009-02-16",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 3,
+   "session": 0,
+   "none": 96
+  },
+  "lines": [
+   "AI disclosures naming opencode and Codex peaked at 41% of commits in Oct 2026 (so far).",
+   "Busiest month: Oct 2017, 649 commits."
+  ],
+  "agents": {
+   "claude": 85,
+   "opencode": 177,
+   "openai": 80,
+   "grok": 5,
+   "codex": 188,
+   "cursor": 6,
+   "ai": 13,
+   "copilot": 9,
+   "pi": 12,
+   "devin": 1,
+   "gemini": 1,
+   "amp": 1
+  },
+  "topBots": [
+   [
+    "Node.js GitHub Bot",
+    1100
+   ],
+   [
+    "dependabot[bot]",
+    331
+   ],
+   [
+    "npm CLI robot",
+    71
+   ]
+  ],
+  "ms": 8388
+ },
+ {
+  "repo": "neovim/neovim",
+  "slug": "neovim--neovim",
+  "commits": 32523,
+  "unit": "month",
+  "rings": 154,
+  "first": "2014-01-31",
+  "shares": {
+   "trailer": 1,
+   "agent": 0,
+   "bot": 0,
+   "session": 0,
+   "none": 99
+  },
+  "lines": [
+   "\"AI-assisted\" disclosures peaked at 24% of commits in Sep 2026.",
+   "Busiest month: Apr 2023, 490 commits."
+  ],
+  "agents": {
+   "codex": 28,
+   "claude": 62,
+   "opencode": 2,
+   "gemini": 3,
+   "ai": 112
+  },
+  "topBots": [
+   [
+    "github-actions[bot]",
+    95
+   ],
+   [
+    "dependabot[bot]",
+    64
+   ]
+  ],
+  "ms": 6303
+ },
+ {
+  "repo": "tauri-apps/tauri",
+  "slug": "tauri-apps--tauri",
+  "commits": 6292,
+  "unit": "month",
+  "rings": 88,
+  "first": "2019-07-13",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 22,
+   "session": 0,
+   "none": 78
+  },
+  "lines": [
+   "3 of 6,292 commits disclose AI (a trailer or an agent account), the first in Apr 2026.",
+   "Bot-named accounts authored 83% of commits in Dec 2020.",
+   "Busiest month: Feb 2022, 201 commits."
+  ],
+  "agents": {
+   "copilot": 1,
+   "claude": 2
+  },
+  "topBots": [
+   [
+    "renovate[bot]",
+    1021
+   ],
+   [
+    "github-actions[bot]",
+    250
+   ],
+   [
+    "dependabot[bot]",
+    96
+   ]
+  ],
+  "ms": 4481
+ },
+ {
+  "repo": "pydantic/pydantic",
+  "slug": "pydantic--pydantic",
+  "commits": 5804,
+  "unit": "month",
+  "rings": 114,
+  "first": "2017-05-03",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 10,
+   "session": 0,
+   "none": 89
+  },
+  "lines": [
+   "Codeflash co-author trailers peaked at 10% of commits in Jul 2024.",
+   "One account, pyup.io bot, authored 50% of commits in Oct 2017.",
+   "Busiest month: Jul 2023, 274 commits."
+  ],
+  "agents": {
+   "codeflash": 14,
+   "claude": 3,
+   "copilot": 1
+  },
+  "topBots": [
+   [
+    "dependabot[bot]",
+    459
+   ],
+   [
+    "dependabot-preview[bot]",
+    75
+   ],
+   [
+    "pyup.io bot",
+    44
+   ]
+  ],
+  "ms": 4548
+ },
+ {
+  "repo": "fastapi/fastapi",
+  "slug": "fastapi--fastapi",
+  "commits": 7822,
+  "unit": "month",
+  "rings": 95,
+  "first": "2018-12-05",
+  "shares": {
+   "trailer": 0,
+   "agent": 0,
+   "bot": 45,
+   "session": 0,
+   "none": 55
+  },
+  "lines": [
+   "3 of 7,822 commits disclose AI (a trailer or an agent account), the first in Feb 2026.",
+   "Bot-named accounts authored 87% of commits in Oct 2026 (so far).",
+   "Busiest month: Jan 2024, 377 commits."
+  ],
+  "agents": {
+   "copilot": 1,
+   "claude": 1,
+   "cursor": 1
+  },
+  "topBots": [
+   [
+    "github-actions",
+    2237
+   ],
+   [
+    "github-actions[bot]",
+    813
+   ],
+   [
+    "dependabot[bot]",
+    250
+   ]
+  ],
+  "ms": 4540
+ },
+ {
+  "repo": "dotnet/runtime",
+  "slug": "dotnet--runtime",
+  "commits": 126909,
+  "unit": "month",
+  "rings": 305,
+  "first": "2001-06-19",
+  "shares": {
+   "trailer": 2,
+   "agent": 1,
+   "bot": 4,
+   "session": 0,
+   "none": 93
+  },
+  "lines": [
+   "Copilot co-author trailers peaked at 59% of commits in Oct 2026 (so far).",
+   "AI agent accounts authored 27% of commits in Jan 2026.",
+   "Busiest month: Mar 2017, 1,836 commits."
+  ],
+  "agents": {
+   "copilot": 3356,
+   "claude": 21
+  },
+  "topBots": [
+   [
+    "dotnet-maestro[bot]",
+    2119
+   ],
+   [
+    "dotnet-maestro-bot",
+    1602
+   ],
+   [
+    "dotnet-bot",
+    1227
+   ]
+  ],
+  "ms": 13615
+ }
+]
